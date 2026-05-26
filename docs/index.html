@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bounty Liquidity Guard</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #111827;
+        --muted: #4b5563;
+        --paper: #f7f3ea;
+        --line: #d6d0c2;
+        --green: #177245;
+        --red: #a23b3b;
+        --blue: #164e63;
+        --gold: #8a6116;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Aptos, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      main {
+        width: calc(100% - 32px);
+        max-width: 1120px;
+        margin: 0 auto;
+      }
+
+      header {
+        min-height: 82vh;
+        display: grid;
+        grid-template-columns: minmax(0, 0.88fr) minmax(320px, 1.12fr);
+        gap: clamp(28px, 5vw, 72px);
+        align-items: center;
+        padding: 48px 0 30px;
+        border-bottom: 2px solid var(--ink);
+      }
+
+      header > *,
+      section > *,
+      .grid > *,
+      .code-grid > * {
+        min-width: 0;
+      }
+
+      h1 {
+        max-width: 10ch;
+        margin: 0;
+        font-size: clamp(3.6rem, 9vw, 7.5rem);
+        line-height: 0.88;
+        letter-spacing: 0;
+      }
+
+      .lede {
+        max-width: 62ch;
+        margin: 28px 0 0;
+        color: var(--muted);
+        font-size: clamp(1.05rem, 2vw, 1.35rem);
+        overflow-wrap: anywhere;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 32px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 16px;
+        border: 2px solid var(--ink);
+        color: var(--ink);
+        text-decoration: none;
+        font-weight: 700;
+        background: #ffffff;
+      }
+
+      .button.primary {
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .matrix {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        height: auto;
+        border: 2px solid var(--ink);
+        background: #ffffff;
+        display: block;
+      }
+
+      section {
+        padding: 48px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      h2 {
+        margin: 0 0 22px;
+        font-size: clamp(2rem, 5vw, 4rem);
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .tile {
+        min-height: 170px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        background: #ffffff;
+        overflow-wrap: anywhere;
+      }
+
+      .tile strong {
+        display: block;
+        margin-bottom: 12px;
+        font-size: 1.05rem;
+      }
+
+      .tile p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .pass {
+        color: var(--green);
+      }
+
+      .reject {
+        color: var(--red);
+      }
+
+      .code-grid {
+        display: grid;
+        grid-template-columns: 0.78fr 1.22fr;
+        gap: 18px;
+        align-items: start;
+      }
+
+      pre {
+        min-width: 0;
+        overflow: auto;
+        margin: 0;
+        padding: 18px;
+        background: #111827;
+        color: #f7f3ea;
+        border: 1px solid #111827;
+        font: 0.9rem/1.45 "SFMono-Regular", Consolas, monospace;
+      }
+
+      .note {
+        color: var(--muted);
+        max-width: 68ch;
+      }
+
+      footer {
+        padding: 28px 0 42px;
+        color: var(--muted);
+      }
+
+      @media (max-width: 820px) {
+        header,
+        .code-grid,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          min-height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <h1>Bounty Liquidity Guard</h1>
+          <p class="lede">
+            A Hedera Agent Kit plugin that rejects illiquid rewards, prompt-leak traps, symbolic bounty bait, and sub-$10 work before an agent spends time on it.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="https://github.com/campersurfer/hedera-bounty-liquidity-guard">GitHub repo</a>
+            <a class="button" href="https://ai-bounties.hedera.com/">Hedera bounty</a>
+          </div>
+        </div>
+        <img class="matrix" src="assets/decision-matrix.svg" alt="Decision matrix showing MRWK, OpenAgents, tiny USDC, and Hedera HBAR outcomes" />
+      </header>
+
+      <section>
+        <h2>Agent Kit Tools</h2>
+        <div class="grid">
+          <div class="tile">
+            <strong>analyze_bounty_liquidity</strong>
+            <p>Runs the full intake gate and emits a decision packet.</p>
+          </div>
+          <div class="tile">
+            <strong>check_token_market</strong>
+            <p>Normalizes token market evidence for liquid-value checks.</p>
+          </div>
+          <div class="tile">
+            <strong>score_opportunity</strong>
+            <p>Computes expected liquid dollars per hour after competition.</p>
+          </div>
+          <div class="tile">
+            <strong>write_hedera_audit_packet</strong>
+            <p>Creates a dry-run digest or writes the packet to Hedera HCS.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Demo Output</h2>
+        <div class="code-grid">
+          <pre>npm run demo:hedera</pre>
+          <pre>{
+  "decision": "pass",
+  "liquidUsdValue": 750,
+  "expectedUsdPerHour": 81.25,
+  "riskLevel": "low",
+  "reasons": [
+    "Reward clears liquidity, value, and red-flag gates."
+  ],
+  "market": {
+    "asset": "HBAR",
+    "tradeable": true,
+    "source": "coingecko",
+    "pair": "HBAR/USDC"
+  }
+}</pre>
+        </div>
+      </section>
+
+      <section>
+        <h2>Control Layer</h2>
+        <p class="note">
+          The public demo holds no user funds and performs no transfers. It is an enterprise control layer for deciding which online paid-work prospects are credible enough for agents to pursue, with optional Hedera Consensus Service audit logging.
+        </p>
+      </section>
+
+      <footer>
+        Built with TypeScript, Vitest, `@hashgraph/hedera-agent-kit`, and `@hiero-ledger/sdk`.
+      </footer>
+    </main>
+  </body>
+</html>

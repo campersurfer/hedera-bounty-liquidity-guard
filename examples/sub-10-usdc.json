@@ -1,0 +1,16 @@
+{
+  "title": "Tiny paid typo fix",
+  "description": "Simple paid issue denominated in USDC.",
+  "reward": {
+    "amount": 9,
+    "asset": "USDC"
+  },
+  "marketEvidence": {
+    "asset": "USDC",
+    "tradeable": true,
+    "priceUsd": 1,
+    "source": "manual"
+  },
+  "estimatedHours": 0.1,
+  "competitionLevel": "low"
+}

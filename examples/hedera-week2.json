@@ -1,0 +1,23 @@
+{
+  "title": "Hedera AI Agent Bounty Week 2",
+  "url": "https://ai-bounties.hedera.com/",
+  "description": "Build an enterprise agent and plugin with Hedera Agent Kit. Submit a GitHub repo, demo URL, implementation details, and feedback issue.",
+  "reward": {
+    "amount": 750,
+    "asset": "HBAR",
+    "denominatedInUsd": true
+  },
+  "marketEvidence": {
+    "asset": "HBAR",
+    "tradeable": true,
+    "priceUsd": 0.08732,
+    "dailyVolumeUsd": 53988731,
+    "depthUsd": 71085,
+    "source": "coingecko",
+    "exchange": "Binance",
+    "pair": "HBAR/USDC",
+    "notes": "CoinGecko showed active HBAR markets with major exchange USDC and USDT liquidity on 2026-05-26."
+  },
+  "estimatedHours": 6,
+  "competitionLevel": "medium"
+}

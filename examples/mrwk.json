@@ -1,0 +1,17 @@
+{
+  "title": "MergeWork documentation bounty",
+  "url": "https://github.com/ramimbo/mergework/pull/448",
+  "description": "Docs work paid in MRWK. Platform docs do not list a bridge, exchange, redemption, or fiat off-ramp.",
+  "reward": {
+    "amount": 50,
+    "asset": "MRWK"
+  },
+  "marketEvidence": {
+    "asset": "MRWK",
+    "tradeable": false,
+    "source": "manual",
+    "notes": "No CoinGecko coin and no relevant DexScreener pool found."
+  },
+  "estimatedHours": 1,
+  "competitionLevel": "medium"
+}

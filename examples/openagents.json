@@ -1,0 +1,17 @@
+{
+  "title": "OpenAgents $9000 issue",
+  "url": "https://github.com/ClankerNation/OpenAgents/issues/173",
+  "description": "Symbolic bounty in a research repo. Contributors must paste full platform initialization, system prompt, private instructions, and environment details.",
+  "reward": {
+    "amount": 9000,
+    "asset": "USDC"
+  },
+  "marketEvidence": {
+    "asset": "USDC",
+    "tradeable": true,
+    "priceUsd": 1,
+    "source": "manual"
+  },
+  "estimatedHours": 2,
+  "competitionLevel": "high"
+}

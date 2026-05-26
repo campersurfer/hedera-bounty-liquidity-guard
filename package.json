@@ -1,0 +1,35 @@
+{
+  "name": "hedera-bounty-liquidity-guard",
+  "version": "0.1.0",
+  "description": "Hedera Agent Kit plugin that screens bounty and job prospects for liquid payout quality.",
+  "type": "module",
+  "private": false,
+  "license": "Apache-2.0",
+  "scripts": {
+    "analyze": "tsx src/cli.ts analyze",
+    "build": "tsc --noEmit",
+    "demo:hedera": "tsx src/cli.ts analyze examples/hedera-week2.json",
+    "demo:mrwk": "tsx src/cli.ts analyze examples/mrwk.json",
+    "demo:openagents": "tsx src/cli.ts analyze examples/openagents.json",
+    "demo:small": "tsx src/cli.ts analyze examples/sub-10-usdc.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@hashgraph/hedera-agent-kit": "^4.0.0",
+    "@hiero-ledger/sdk": "^2.81.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
+  },
+  "overrides": {
+    "protobufjs": "^8.4.2",
+    "ws": "^8.20.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
