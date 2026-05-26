@@ -11,6 +11,10 @@ It answers four operational questions:
 
 This project was built for the Hedera AI Agent Bounty Week 2, "Enterprise Agent + Plugin".
 
+Live demo: <https://campersurfer.github.io/hedera-bounty-liquidity-guard/>
+
+Agent Kit feedback issue: <https://github.com/hashgraph/hedera-agent-kit-js/issues/867>
+
 ## Hedera Agent Kit Integration
 
 The plugin uses the official JavaScript Agent Kit v4 pattern:

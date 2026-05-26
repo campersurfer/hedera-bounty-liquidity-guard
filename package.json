@@ -5,6 +5,14 @@
   "type": "module",
   "private": false,
   "license": "Apache-2.0",
+  "homepage": "https://campersurfer.github.io/hedera-bounty-liquidity-guard/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/campersurfer/hedera-bounty-liquidity-guard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/campersurfer/hedera-bounty-liquidity-guard/issues"
+  },
   "scripts": {
     "analyze": "tsx src/cli.ts analyze",
     "build": "tsc --noEmit",
